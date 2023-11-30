@@ -1,0 +1,112 @@
+$primary-color: #9356DC;
+$second-color: #FF79DA;
+$third-color: #99E2D0;
+
+@font-face {
+    font-family: Shrikhand;
+    src: url(../fonts/Shrikhand-Regular.ttf);
+    font-weight: normal;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    font-family: Roboto;
+}
+
+header{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    img{
+        width: 162px;
+    }
+}
+
+.photo img{
+    width: 100%;
+    height: 275px;
+    object-fit: cover;
+}
+
+.main-title{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 30px;
+    i{
+        padding-top: 20px;
+    }
+}
+
+h1, .shrikhand{
+    font-family: Shrikhand;
+}
+
+main{
+    background-color: #F6F6F6;
+    border-top-right-radius: 40px;
+    border-top-left-radius: 40px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+h2{
+    font-weight: 300;
+    font-size: 16px;
+    margin-bottom: 20px;
+    span{
+        border-bottom: solid 3px $third-color;
+        padding-bottom: 5px;
+    }
+}
+
+article{
+    background-color: white;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    padding: 10px;
+    border-radius: 15px;
+    h3{
+        font-weight: 600;
+        font-size: 18px;
+    }
+    p{
+        font-size: 15px;
+        font-weight: 300;
+    }
+    .prix{
+        font-weight: 700;
+    }
+}
+
+.commander{
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 40px;
+}
+
+button{
+    margin-top: 15px;
+    background: linear-gradient(to bottom, $second-color, $primary-color);
+    color: white;
+    padding: 20px;
+    padding-right: 60px;
+    padding-left: 60px;
+    border-radius: 30px;
+    border: none;
+    font-size: 16px;
+}
+
+footer{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    background-color: #353535;
+    color: white;
+    h2{
+        padding-bottom: 10px;
+    }
+}
