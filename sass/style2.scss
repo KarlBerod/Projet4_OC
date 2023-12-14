@@ -2,6 +2,14 @@ $primary-color: #9356DC;
 $second-color: #FF79DA;
 $third-color: #99E2D0;
 
+@mixin box-shadow{
+    box-shadow:
+    0px 0.6px 2.2px rgba(0, 0, 0, 0.037),
+    0px 1.3px 5.3px rgba(0, 0, 0, 0.053),
+    0px 2.5px 10px rgba(0, 0, 0, 0.065),
+    0px 4.5px 17.9px rgba(0, 0, 0, 0.077);
+}
+
 @font-face {
     font-family: Shrikhand;
     src: url(../fonts/Shrikhand-Regular.ttf);
@@ -24,13 +32,6 @@ header{
     }
 }
 
-.photo{
-    // background-image: url("../images et css/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg");
-    position: relative;
-    z-index: 0;
-}
-
-
 .photo img{
     width: 100%;
     height: 275px;
@@ -52,13 +53,12 @@ h1, .shrikhand{
 
 main{
     position: relative;
-    background-color: darkblue;
+    background-color: #F6F6F6;
     border-top-right-radius: 40px;
     border-top-left-radius: 40px;
     padding-left: 10px;
     padding-right: 10px;
     margin-top: -40px;
-    z-index: 10;
 }
 
 h2{
@@ -72,6 +72,7 @@ h2{
 }
 
 article{
+    @include box-shadow;
     background-color: white;
     margin-bottom: 15px;
     display: flex;
@@ -99,6 +100,7 @@ article{
 }
 
 button{
+    @include box-shadow;
     margin-top: 15px;
     background: linear-gradient(to bottom, $second-color, $primary-color);
     color: white;
@@ -108,6 +110,15 @@ button{
     border-radius: 30px;
     border: none;
     font-size: 16px;
+    transition: all;
+        &:hover{
+            background: linear-gradient(to bottom, lighten($second-color, 3%), lighten($primary-color, 3%));
+            box-shadow:
+                0px 0.9px 3.6px rgba(0, 0, 0, 0.07),
+                0px 2.5px 10px rgba(0, 0, 0, 0.1),
+                0px 6px 24.1px rgba(0, 0, 0, 0.13),
+                0px 20px 80px rgba(0, 0, 0, 0.2);
+        }
 }
 
 footer{
@@ -118,5 +129,30 @@ footer{
     color: white;
     h2{
         padding-bottom: 10px;
+    }
+}
+
+section{
+    opacity: 0;
+}
+
+.entrees{
+    animation: apparition 1000ms 500ms forwards;
+}
+
+.plats{
+    animation: apparition 1000ms 1000ms forwards;
+}
+
+.desserts{
+    animation: apparition 1000ms 1500ms forwards;
+}
+
+@keyframes apparition{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
     }
 }
