@@ -39,13 +39,18 @@ header{
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
     i{
         margin-right: 10px;
+        margin-left: 30px;
     }
     input{
+        font-size: 14px;
         border: none;
         background-color: #EAEAEA;
-        width:100px;
+        width:150px;
+        padding-left: 10px;
     }
 }
 
@@ -60,6 +65,11 @@ header{
     padding-right: 30px;
     text-align: center;
     h1{
+        padding-bottom: 15px;
+        font-size: 24px;
+        padding-top: 20px;
+    }
+    p{
         padding-bottom: 15px;
     }
     button{
@@ -85,13 +95,15 @@ header{
 .fonctionnement{
     margin-left: 20px;
     margin-right: 20px;
+    padding-bottom: 50px;
     h2{
-        padding-bottom: 20px;
-        padding-top: 20px;
+        padding-bottom: 35px;
+        padding-top: 50px;
     }
 }
 
 .pin{
+    position: absolute;
     border-radius: 20px;
     padding: 5px;
     padding-right: 9px;
@@ -100,7 +112,7 @@ header{
     color: white;
     font-size: 14px;
     font-weight: 500;
-    margin-left: -60px;
+    margin-left: -10px;
 }
 
 .fonctionnement-card{
@@ -108,11 +120,19 @@ header{
     background-color: #F6F6F6;
     border-radius: 20px;
     margin-left: 5px;
-    display: flex;
-    justify-content: space-evenly;
     padding-top: 20px;
     padding-bottom: 20px;
     margin-bottom: 20px;
+    div{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        text-align: center;
+        margin-left: 30px;
+        i{
+            margin-right: 10px;
+        }
+    }
 }
 
 .fa-mobile-screen-button , .fa-list-ul{
@@ -127,10 +147,12 @@ header{
 
 .restaurants{
     padding-top: 10px;
-    padding-bottom: 10px;
+    padding-bottom: 45px;
     background-color: #F6F6F6;
     h2{
         margin-left: 20px;
+        padding-top: 40px;
+        padding-bottom: 20px;
     }
     img{
         width: 100%;
@@ -143,8 +165,14 @@ header{
         margin-left: 20px;
         margin-right: 20px;
         background-color: white;
-        margin-bottom: 10px;
+        margin-bottom: 20px;
         border-radius: 15px;
+        .restaurants-description{
+            padding-top: 15px;
+            padding-bottom: 20px;
+            padding-right: 15px;
+            padding-left: 15px;
+        }
     }
 }
 
@@ -156,6 +184,8 @@ header{
 }
 
 footer{
+    display: flex;
+    flex-direction: column;
     padding-top: 20px;
     padding-bottom: 20px;
     padding-left: 20px;
@@ -175,21 +205,9 @@ footer{
 }
 
 /* ANIMATIONS */
-
-// .hidden{
-//     margin-bottom: 6px;
-//     opacity: 0;
-//     transition: all 1000ms ease-out;
-//     position: absolute;
-//     &:active{
-//         opacity: 1;
-//         color: transparent;
-//         background-image: linear-gradient($primary-color, $second-color);
-//         background-clip: text;
-//     }
-// }
+// anmation du coeur
 .hidden{
-    padding-top: 1px;
+    line-height: 18px;
     opacity: 0;
     position: absolute;
     color: transparent;
@@ -210,8 +228,10 @@ footer{
     }
 }
 
+// animation du loader
+
 .loader{
-    margin-top: -1700px;
+    margin-top: -2000px;
     display: flex;
     justify-content: center;
     flex-direction: column;

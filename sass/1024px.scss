@@ -1,0 +1,27 @@
+$primary-color: #9356DC;
+$second-color: #FF79DA;
+$third-color: #99E2D0;
+@media (min-width: 1024px){
+    .fonctionnement{
+        width: 75vw;
+        padding-left: 12vw;
+    }
+    .restaurants-card{
+        width: 75vw;
+        padding-left: 12vw;
+        gap: 30px;
+    }
+    .restaurants-titre{
+        padding-left: 12vw;
+    }
+    .restaurants{
+        img{
+            height: 13vw;
+        }
+    }
+    footer{
+        div{
+            margin-right: 30px;
+        }
+    }
+}

@@ -1,0 +1,41 @@
+$primary-color: #9356DC;
+$second-color: #FF79DA;
+$third-color: #99E2D0;
+@media (min-width: 768px){
+    .restaurants-card{
+        display: grid;
+        grid-template-columns: 50% 50%;
+    }
+
+    .fonctionnement-flex{
+        display: grid;
+        grid-template-columns: 30% 30% 30%;
+        gap: 5vh;
+    }
+
+    footer{
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: end;
+        h2{
+            margin-bottom: -15px;
+            margin-right: 10px;
+        }
+        div{
+            display: flex;
+            flex-direction: row;
+            p{
+                margin-right: 10px;
+            }
+            .partenaire{
+                margin-right: 20px;
+            }
+            .contact{
+                margin-right: 30px;
+            }
+        }
+    }
+    .loader{
+        margin-top: -1100px;
+    }
+}
