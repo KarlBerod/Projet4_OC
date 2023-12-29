@@ -24,7 +24,7 @@ $third-color: #99E2D0;
         div{
             display: flex;
             flex-direction: row;
-            p{
+            a{
                 margin-right: 10px;
             }
             .partenaire{
@@ -37,5 +37,20 @@ $third-color: #99E2D0;
     }
     .loader{
         margin-top: -1100px;
+    }
+
+    // pour les pages restaurants
+    .main-title{
+        display: block;
+        text-align: center;
+        div , h1{
+            display: inline;
+        }
+        i{
+            margin-left: 20px;
+        }
+        .hidden{
+            margin-top: 1px;
+       }
     }
 }

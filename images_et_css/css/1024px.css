@@ -17,4 +17,12 @@
   footer div {
     margin-right: 30px;
   }
+  main {
+    max-width: 70%;
+    margin-left: 15%;
+  }
+  main section {
+    max-width: 60%;
+    margin-left: 20%;
+  }
 }/*# sourceMappingURL=1024px.css.map */

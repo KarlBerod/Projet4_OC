@@ -100,6 +100,10 @@ header{
         padding-bottom: 35px;
         padding-top: 50px;
     }
+    h3{
+        font-size: 16px;
+        font-weight: 500;
+    }
 }
 
 .pin{
@@ -194,6 +198,10 @@ footer{
     h2{
         padding-bottom: 10px;
     }
+    a{
+        color: white;
+        text-decoration: none;
+    }
 }
 
 .shrikhand{
@@ -253,9 +261,6 @@ footer{
 }
 
 @keyframes loader-end{
-    0%{
-        transform: translate(0);
-    }
     50%{
         transform: translate(200vw);
     }
@@ -279,9 +284,6 @@ footer{
 }
 
 @keyframes dot-animation{
-    0%{
-        translate: 0px;
-    }
     50%{
         transform: translate(0, -40px);
     }

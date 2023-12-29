@@ -25,10 +25,15 @@ $third-color: #99E2D0;
 header{
     padding-top: 10px;
     padding-bottom: 10px;
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: 3% 20%;
+    gap: 42%;
     img{
         width: 162px;
+    }
+    a{
+        padding: 10px;
+        padding-left: 20px;
     }
 }
 
@@ -39,11 +44,13 @@ header{
 }
 
 .main-title{
+    padding-top: 30px;
     display: flex;
     justify-content: space-between;
     padding-bottom: 30px;
     i{
         padding-top: 20px;
+        padding-right: 40px;
     }
 }
 
@@ -72,10 +79,10 @@ h2{
 }
 
 article{
-    @include box-shadow;
-    background-color: white;
+    width: 100%;
     margin-bottom: 15px;
     border-radius: 15px;
+    background-color: white;
     .card-txt{
         display: flex;
         justify-content: space-between;
@@ -85,10 +92,20 @@ article{
         display: flex;
         align-items: end;
     }
+
+    .card-txt > div:first-child {
+        min-width: 0; //ajuste la taille pour minimum pour faire fonctionner l'ellipsis
+    }
+
+    h3, p {
+        white-space: nowrap;//on ne revient pas à la ligne
+        overflow: hidden;//ce qui revient à la ligne est caché
+        text-overflow: ellipsis;
+    }
+
     h3{
         font-weight: 600;
         font-size: 18px;
-        text-overflow: ellipsis;
         padding-top: 10px;
         padding-left: 10px;
     }
@@ -97,23 +114,69 @@ article{
         padding-bottom: 10px;
         font-size: 15px;
         font-weight: 300;
-        text-overflow: ellipsis;
     }
     .prix{
+        white-space: nowrap;
         font-weight: 700;
+        margin-right: 20px;
+        flex-shrink: 0;
     }
     .check{
-        background-color: $third-color;
-        width: 0%;
         color: white;
+        background-color: white;
         border-bottom-right-radius: 15px;
         border-top-right-radius: 15px;
-        padding-left: 20px;
-        padding-right: 20px;
+        padding-left: 0px;
+        padding-right: 0px;
         .fa-circle-check{
             padding-bottom: 25px;
             padding-top: 25px;
         }
+    }
+    .card-txt:hover .check{
+        animation: checkmark 700ms forwards;
+    }
+    .card-txt:not(:hover) .check{
+        animation: checkmark-reverse 700ms forwards;
+    }
+}
+
+@keyframes checkmark {
+    0%{
+        background-color: $third-color;
+        padding-left: 0px;
+        padding-right: 0px;
+        color: $third-color;
+    }
+    50%{
+        background-color: $third-color;
+        padding-left: 20px;
+        color: white;
+    }
+    100%{
+        background-color: $third-color;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+@keyframes checkmark-reverse{
+    0%{
+        background-color: $third-color;
+        padding-left: 20px;
+        padding-right: 20px;
+        color: white;
+    }
+    50%{
+        background-color: $third-color;
+        padding-right: 0px;
+        color: $third-color;
+    }
+    100%{
+        background-color: white;
+        padding-left: 0px;
+        padding-right: 0px;
+        color: white;
     }
 }
 
@@ -146,6 +209,8 @@ button{
 }
 
 footer{
+    display: flex;
+    flex-direction: column;
     padding-top: 20px;
     padding-bottom: 20px;
     padding-left: 20px;
@@ -158,6 +223,7 @@ footer{
 
 section{
     opacity: 0;
+    padding-bottom: 20px;
 }
 
 .entrees{
@@ -173,6 +239,29 @@ section{
 }
 
 @keyframes apparition{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+.hidden{
+    margin-top: -8px;
+    line-height: 18px;
+    opacity: 0;
+    position: absolute;
+    color: transparent;
+    background-image: linear-gradient($primary-color, $second-color);
+    background-clip: text;
+    // animation: fill-heart 1000ms forwards;
+    &:hover{
+        animation: fill-heart 1000ms ease forwards;
+    }
+}
+
+@keyframes fill-heart{
     from{
         opacity: 0;
     }

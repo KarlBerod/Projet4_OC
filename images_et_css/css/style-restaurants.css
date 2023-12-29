@@ -12,11 +12,16 @@
 header {
   padding-top: 10px;
   padding-bottom: 10px;
-  display: flex;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: 3% 20%;
+  gap: 42%;
 }
 header img {
   width: 162px;
+}
+header a {
+  padding: 10px;
+  padding-left: 20px;
 }
 
 .photo img {
@@ -27,12 +32,14 @@ header img {
 }
 
 .main-title {
+  padding-top: 30px;
   display: flex;
   justify-content: space-between;
   padding-bottom: 30px;
 }
 .main-title i {
   padding-top: 20px;
+  padding-right: 40px;
 }
 
 h1, .shrikhand {
@@ -60,10 +67,10 @@ h2 span {
 }
 
 article {
-  box-shadow: 0px 0.6px 2.2px rgba(0, 0, 0, 0.037), 0px 1.3px 5.3px rgba(0, 0, 0, 0.053), 0px 2.5px 10px rgba(0, 0, 0, 0.065), 0px 4.5px 17.9px rgba(0, 0, 0, 0.077);
-  background-color: white;
+  width: 100%;
   margin-bottom: 15px;
   border-radius: 15px;
+  background-color: white;
 }
 article .card-txt {
   display: flex;
@@ -74,10 +81,17 @@ article .card-txt-right {
   display: flex;
   align-items: end;
 }
+article .card-txt > div:first-child {
+  min-width: 0;
+}
+article h3, article p {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 article h3 {
   font-weight: 600;
   font-size: 18px;
-  text-overflow: ellipsis;
   padding-top: 10px;
   padding-left: 10px;
 }
@@ -86,25 +100,69 @@ article p {
   padding-bottom: 10px;
   font-size: 15px;
   font-weight: 300;
-  text-overflow: ellipsis;
 }
 article .prix {
+  white-space: nowrap;
   font-weight: 700;
+  margin-right: 20px;
+  flex-shrink: 0;
 }
 article .check {
-  background-color: #99E2D0;
-  width: 0%;
   color: white;
+  background-color: white;
   border-bottom-right-radius: 15px;
   border-top-right-radius: 15px;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 0px;
+  padding-right: 0px;
 }
 article .check .fa-circle-check {
   padding-bottom: 25px;
   padding-top: 25px;
 }
+article .card-txt:hover .check {
+  animation: checkmark 700ms forwards;
+}
+article .card-txt:not(:hover) .check {
+  animation: checkmark-reverse 700ms forwards;
+}
 
+@keyframes checkmark {
+  0% {
+    background-color: #99E2D0;
+    padding-left: 0px;
+    padding-right: 0px;
+    color: #99E2D0;
+  }
+  50% {
+    background-color: #99E2D0;
+    padding-left: 20px;
+    color: white;
+  }
+  100% {
+    background-color: #99E2D0;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+@keyframes checkmark-reverse {
+  0% {
+    background-color: #99E2D0;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: white;
+  }
+  50% {
+    background-color: #99E2D0;
+    padding-right: 0px;
+    color: #99E2D0;
+  }
+  100% {
+    background-color: white;
+    padding-left: 0px;
+    padding-right: 0px;
+    color: white;
+  }
+}
 .commander {
   display: flex;
   justify-content: space-around;
@@ -130,6 +188,8 @@ button:hover {
 }
 
 footer {
+  display: flex;
+  flex-direction: column;
   padding-top: 20px;
   padding-bottom: 20px;
   padding-left: 20px;
@@ -142,6 +202,7 @@ footer h2 {
 
 section {
   opacity: 0;
+  padding-bottom: 20px;
 }
 
 .entrees {
@@ -163,4 +224,26 @@ section {
   to {
     opacity: 1;
   }
-}/*# sourceMappingURL=style2.css.map */
+}
+.hidden {
+  margin-top: -8px;
+  line-height: 18px;
+  opacity: 0;
+  position: absolute;
+  color: transparent;
+  background-image: linear-gradient(#9356DC, #FF79DA);
+  -webkit-background-clip: text;
+          background-clip: text;
+}
+.hidden:hover {
+  animation: fill-heart 1000ms ease forwards;
+}
+
+@keyframes fill-heart {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}/*# sourceMappingURL=style-restaurants.css.map */
