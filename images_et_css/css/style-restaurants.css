@@ -230,7 +230,6 @@ section {
   }
 }
 .hidden {
-  margin-top: -8px;
   line-height: 18px;
   opacity: 0;
   position: absolute;
@@ -241,6 +240,10 @@ section {
 }
 .hidden:hover {
   animation: fill-heart 1000ms ease forwards;
+}
+
+.displayed {
+  margin-top: 8px;
 }
 
 @keyframes fill-heart {
