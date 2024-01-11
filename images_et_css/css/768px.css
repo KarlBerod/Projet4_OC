@@ -37,7 +37,7 @@
     display: block;
     text-align: center;
   }
-  .main-title div, .main-title h1 {
+  .main-title div, .main-title h2 {
     display: inline;
   }
   .main-title i {

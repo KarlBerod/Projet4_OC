@@ -1,12 +1,7 @@
-@font-face {
-  font-family: Shrikhand;
-  src: url(../fonts/Shrikhand-Regular.ttf);
-  font-weight: normal;
-}
 * {
   padding: 0;
   margin: 0;
-  font-family: Roboto;
+  font-family: "Roboto", sans-serif;
 }
 
 header {
@@ -164,11 +159,25 @@ header img {
   padding-left: 15px;
 }
 
+.card-title {
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.card-text {
+  font-weight: 300;
+  font-size: 17px;
+}
+
 .restaurants-description {
   display: flex;
   justify-content: space-between;
   flex-direction: row;
   align-items: center;
+}
+.restaurants-description a {
+  color: black;
+  text-decoration: none;
 }
 
 footer {
@@ -187,7 +196,7 @@ footer a {
 }
 
 .shrikhand {
-  font-family: Shrikhand;
+  font-family: "Shrikhand", serif;
 }
 
 .displayed {
@@ -196,7 +205,7 @@ footer a {
 
 /* ANIMATIONS */
 .hidden {
-  line-height: 18px;
+  line-height: 25px;
   opacity: 0;
   position: absolute;
   color: transparent;
@@ -206,6 +215,11 @@ footer a {
 }
 .hidden:hover {
   animation: fill-heart 1000ms ease forwards;
+}
+
+.displayed {
+  padding-top: 10px;
+  margin-top: 2px;
 }
 
 @keyframes fill-heart {
@@ -225,7 +239,7 @@ footer a {
   animation: loader-end 2000ms 2000ms forwards;
 }
 .loader img {
-  width: 80vw;
+  width: 200px;
 }
 .loader .dots {
   padding-top: 40px;
