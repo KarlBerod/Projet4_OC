@@ -175,9 +175,10 @@ header img {
   flex-direction: row;
   align-items: center;
 }
-.restaurants-description a {
-  color: black;
+
+.card-link {
   text-decoration: none;
+  color: black;
 }
 
 footer {
